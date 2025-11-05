@@ -1,3 +1,4 @@
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -6,21 +7,23 @@ body {
 }
 
 .header {
-  background: #ff7043;
-  color: white;
+  background: rgba(47,30,20,0.1);
+  color: red;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
   position: sticky;
-  top: 0px;
+  top: 0;
+  flex-wrap: wrap;
 }
 
-.logo img{
-    height: 40px;
-    width:40px;
-    margin-right: 15px;
+.logo img {
+  height: 40px;
+  width: 40px;
+  margin-right: 15px;
 }
+
 .logo {
   font-size: 24px;
   font-weight: bold;
@@ -28,31 +31,40 @@ body {
   display: flex;
   align-items: center;
 }
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .nav a {
-  color: white;
+  color: black;
   text-decoration: none;
   margin: 0 10px;
-  gap:30;
   font-size: large;
 }
+
 .nav a:hover {
   text-decoration: underline;
 }
 
 .background {
-  background: url('images/helpimage.jpeg') center/cover no-repeat;
+  background: linear-gradient(to bottom, rgb(247, 109, 3), white, white, green);
   text-align: center;
-  color: white;
+  color: blue;
   padding: 120px 20px;
 }
+
 .tagline h1 {
   font-size: 2.5em;
   margin-bottom: 10px;
 }
+
 .tagline p {
   font-size: 1.2em;
   margin-bottom: 20px;
 }
+
 .button {
   background-color: #ff7043;
   color: white;
@@ -61,11 +73,12 @@ body {
   border-radius: 5px;
   transition: background 0.3s;
 }
+
 .button:hover {
   background-color: #ff5722;
 }
 
-
+/* Highlights Section */
 .highlights {
   display: flex;
   justify-content: center;
@@ -73,6 +86,7 @@ body {
   padding: 50px;
   flex-wrap: wrap;
 }
+
 .card {
   background: white;
   border-radius: 10px;
@@ -81,16 +95,18 @@ body {
   width: 300px;
   text-align: center;
 }
+
 .card img {
   width: 100%;
   border-radius: 10px;
-  height:200px;
+  height: 200px;
 }
+
 .card h2 {
   color: #ff7043;
 }
 
-
+/* Service Section */
 .service-cards {
   display: flex;
   justify-content: center;
@@ -98,6 +114,7 @@ body {
   padding: 50px;
   flex-wrap: wrap;
 }
+
 .service-box {
   background: white;
   border-radius: 10px;
@@ -107,9 +124,11 @@ body {
   text-align: center;
   transition: transform 0.3s;
 }
+
 .service-box:hover {
   transform: scale(1.03);
 }
+
 .click-button {
   background-color: #ff7043;
   color: white;
@@ -118,26 +137,30 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
+
 .click-button:hover {
   background-color: #ff5722;
 }
 
-
+/* Table */
 table {
   width: 80%;
   margin: 30px auto;
   border-collapse: collapse;
 }
+
 th, td {
   border: 1px solid #ddd;
   padding: 10px;
   text-align: center;
 }
+
 th {
   background: #ff7043;
   color: white;
 }
 
+/* Contact Form */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -145,6 +168,7 @@ th {
   max-width: 500px;
   margin: 20px auto;
 }
+
 .contact-form input,
 .contact-form textarea {
   margin-bottom: 15px;
@@ -152,25 +176,89 @@ th {
   border-radius: 5px;
   border: 1px solid #ccc;
 }
+
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: #ff7043;
 }
 
+/* Footer */
 .footer {
-  background: #ff7043;
-  color: white;
+  background: linear-gradient(to right, #d4fc79, #96e6a1);
+  color: black;
   text-align: center;
   padding: 20px;
 }
+
 .social a {
   color: white;
   margin: 0 8px;
   text-decoration: none;
 }
+
 .social a:hover {
   text-decoration: underline;
 }
-.contact{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+.contact {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+@media (max-width: 992px) {
+  .highlights,
+  .service-cards {
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .card,
+  .service-box {
+    width: 45%;
+  }
+
+  .background {
+    padding: 100px 15px;
+  }
+
+  .tagline h1 {
+    font-size: 2em;
+  }
+
+  .tagline p {
+    font-size: 1em;
+  }
+
+  .nav a {
+    margin: 0 8px;
+    font-size: medium;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .nav {
+    display: flex;
+    flex-wrap: nowrap;      
+    overflow-x: auto;        
+    -webkit-overflow-scrolling: touch; 
+  }
+
+  .nav a {
+    flex: 0 0 auto;         
+    padding: 10px 15px;      
+    font-size: 16px;         
+  }
+
+
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+  .nav {
+    -ms-overflow-style: none;  
+    scrollbar-width: none;     
+  }
+
+  main, .background, .highlights, .service-cards {
+    padding-top: 70px;
+  }
 }
